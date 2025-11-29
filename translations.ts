@@ -217,7 +217,7 @@ export const TRANSLATIONS: Record<'en' | 'bg', SiteContent> = {
       tiers: [
         {
           title: 'Wall Mosaic',
-          price: 2500,
+          price: 1250,
           unit: '€/m²',
           recommendedFor: 'Backsplashes, Feature Walls, Facades',
           features: [
@@ -230,28 +230,28 @@ export const TRANSLATIONS: Record<'en' | 'bg', SiteContent> = {
         },
         {
           title: 'Floor Mosaic',
-          price: 3500,
+          price: 1750,
           unit: '€/m²',
-          recommendedFor: 'Entryways, Patios, Bathrooms',
+          recommendedFor: 'Entryways, Bathrooms, Commercial Spaces',
           features: [
-            'Heavy-duty stone selection',
-            'Slip-resistant texture',
-            'Custom Design & Visualization',
-            'Pre-assembled segments',
-            'Timeless durability'
+            'Durable stone selection',
+            'Reinforced structure',
+            'Slip-resistant finish',
+            'Pre-assembled on mesh',
+            'Heavy-duty installation guide'
           ]
         },
         {
-          title: 'On-Site Creation',
-          price: 500,
-          unit: 'surcharge/m²',
-          recommendedFor: 'The "Wow" Factor',
+          title: 'On-Site Installation',
+          price: 250,
+          unit: '+€/m²',
+          recommendedFor: 'Large projects, Complex designs',
           features: [
-            'Artists work at your location',
-            'Live demonstration of the craft',
-            'Perfect for public spaces',
-            'Requires paid accommodation',
-            'Direct client interaction'
+            'Professional installation team',
+            'On-site adjustments',
+            'Grouting & finishing',
+            'Project supervision',
+            'Final quality inspection'
           ]
         }
       ]
@@ -292,9 +292,9 @@ export const TRANSLATIONS: Record<'en' | 'bg', SiteContent> = {
       submit: 'Send Request',
       privacy: 'We respect your privacy. No spam.',
       mosaicTypes: [
-        'Wall Mosaic (€2500/m²)',
-        'Floor Mosaic (€3500/m²)',
-        'On-Site Installation (+€500/m²)',
+        'Wall Mosaic (€1250/m²)',
+        'Floor Mosaic (€1750/m²)',
+        'On-Site Installation (+€250/m²)',
         'Custom Project (Client Photos/Design)',
         'Other / Unsure'
       ]
@@ -372,7 +372,7 @@ export const TRANSLATIONS: Record<'en' | 'bg', SiteContent> = {
       tiers: [
         {
           title: 'Стенна Мозайка',
-          price: 2500,
+          price: 1250,
           unit: '€/м²',
           recommendedFor: 'Гърбове на кухни, Акцентни стени, Фасади',
           features: [
@@ -385,28 +385,28 @@ export const TRANSLATIONS: Record<'en' | 'bg', SiteContent> = {
         },
         {
           title: 'Подова Мозайка',
-          price: 3500,
+          price: 1750,
           unit: '€/м²',
-          recommendedFor: 'Входове, Патио, Бани',
+          recommendedFor: 'Антрета, Бани, Търговски пространства',
           features: [
-            'Селекция от устойчиви камъни',
-            'Текстура против хлъзгане',
-            'Индивидуален дизайн и визуализация',
-            'Предварително сглобени сегменти',
-            'Вечна издръжливост'
+            'Избор на издръжлив камък',
+            'Подсилена структура',
+            'Анхлъзустойчива повърхност',
+            'Предварително сглобени на мрежа',
+            'Ръководство за тежък монтаж'
           ]
         },
         {
-          title: 'Изработка на Място',
-          price: 500,
-          unit: 'добавка/м²',
-          recommendedFor: 'За "Wow" Фактора',
+          title: 'Монтаж на Място',
+          price: 250,
+          unit: '+€/м²',
+          recommendedFor: 'Големи проекти, Сложни дизайни',
           features: [
-            'Артисти работят на вашата локация',
-            'Демонстрация на занаята на живо',
-            'Перфектно за обществени пространства',
-            'Изисква се платен престой',
-            'Директна комуникация с клиента'
+            'Професионален екип за монтаж',
+            'Корекции на място',
+            'Фугиране и довършване',
+            'Надзор на проекта',
+            'Финален контрол на качеството'
           ]
         }
       ]
@@ -447,9 +447,9 @@ export const TRANSLATIONS: Record<'en' | 'bg', SiteContent> = {
       submit: 'Изпрати Запитване',
       privacy: 'Ние уважаваме поверителността ви. Без спам.',
       mosaicTypes: [
-        'Стенна Мозайка (€2500/м²)',
-        'Подова Мозайка (€3500/м²)',
-        'Монтаж на Място (+€500/м²)',
+        'Стенна Мозайка (€1250/м²)',
+        'Подова Мозайка (€1750/м²)',
+        'Монтаж на Място (+€250/м²)',
         'Персонализиран Проект (Снимки/Дизайн на Клиент)',
         'Друго / Не съм сигурен'
       ]
