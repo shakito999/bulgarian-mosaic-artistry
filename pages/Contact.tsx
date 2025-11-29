@@ -108,6 +108,21 @@ export const Contact: React.FC = () => {
                 <div>
                   <h4 className="font-bold text-lg mb-1">{t.contactPage.phone}</h4>
                   <p className="text-stone-300">{CONTACT_PHONE}</p>
+                  <div className="flex gap-2 mt-2">
+                    <a 
+                      href={`tel:${CONTACT_PHONE.replace(/[\s\-\(\)]/g, '')}`}
+                      className="inline-flex items-center px-3 py-1 bg-gold-600 text-white text-xs rounded hover:bg-gold-700 transition-colors"
+                    >
+                      <Phone className="w-3 h-3 mr-1" />
+                      Call
+                    </a>
+                    <a 
+                      href={`viber://contact?number=%2B${CONTACT_PHONE.replace(/[^0-9]/g, '')}`}
+                      className="inline-flex items-center px-3 py-1 bg-purple-600 text-white text-xs rounded hover:bg-purple-700 transition-colors"
+                    >
+                      💬 Viber
+                    </a>
+                  </div>
                 </div>
               </div>
 
@@ -227,9 +242,20 @@ export const Contact: React.FC = () => {
                     >
                       Click here to open email manually
                     </a>
-                    <p className="text-xs text-amber-700 text-center">
-                      Or call us directly: {CONTACT_PHONE}
-                    </p>
+                    <div className="flex gap-2">
+                      <a 
+                        href={`tel:${CONTACT_PHONE.replace(/[\s\-\(\)]/g, '')}`}
+                        className="flex-1 text-center bg-green-600 text-white px-3 py-2 rounded hover:bg-green-700 transition-colors text-sm"
+                      >
+                        📞 Call Now
+                      </a>
+                      <a 
+                        href={`viber://contact?number=%2B${CONTACT_PHONE.replace(/[^0-9]/g, '')}`}
+                        className="flex-1 text-center bg-purple-600 text-white px-3 py-2 rounded hover:bg-purple-700 transition-colors text-sm"
+                      >
+                        💬 Message on Viber
+                      </a>
+                    </div>
                   </div>
                 </div>
               )}
