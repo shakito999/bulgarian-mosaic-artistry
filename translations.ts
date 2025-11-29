@@ -3,55 +3,55 @@ import { Palette, Ruler, Hammer, Truck } from 'lucide-react';
 
 export const IMAGES = {
   // Fuji Project
-  fuji: './image/mt-fuji.jpg',
-  fujiMaking: './image/mt-fuji-making.jpg',
+  fuji: '/image/mt-fuji.jpg',
+  fujiMaking: '/image/mt-fuji-making.jpg',
   
   // Religious / Facade Project
-  byzantine: './image/virgin-mary-baby-jesus.jpg',
-  maryMaking: './image/making-of-icon.jpg',
-  maryIcon: './image/the-madonna.jpg',
-  jesusIcon: './image/jesus-christ-A-O.jpg',
-  artistWorking: './image/making-of-icon.jpg',
+  byzantine: '/image/virgin-mary-baby-jesus.jpg',
+  maryMaking: '/image/making-of-icon.jpg',
+  maryIcon: '/image/the-madonna.jpg',
+  jesusIcon: '/image/jesus-christ-A-O.jpg',
+  artistWorking: '/image/making-of-icon.jpg',
   
   // Divine Mercy / Cross
-  divineMercy: './image/jesus-christ-on-cross.jpg',
-  jesusCross: './image/jesus-christ-on-cross.jpg',
+  divineMercy: '/image/jesus-christ-on-cross.jpg',
+  jesusCross: '/image/jesus-christ-on-cross.jpg',
 
   // Modern
-  striker: './image/erling-haaland-N9.jpg',
+  striker: '/image/erling-haaland-N9.jpg',
   
   // Classical
-  musician: './image/violin-player.jpg',
-  horse: './image/elite-horse.jpg',
-  romanBust: './image/Marcus-Aurelius.jpg',
-  angels: './image/angels-playin-violin-jesus.jpg',
+  musician: '/image/violin-player.jpg',
+  horse: '/image/elite-horse.jpg',
+  romanBust: '/image/Marcus-Aurelius.jpg',
+  angels: '/image/angels-playin-violin-jesus.jpg',
   
   // Egyptian
-  egyptian: './image/cleopatra.jpg',
+  egyptian: '/image/cleopatra.jpg',
   
   // Girl with Pearl Earring
-  girlPearl: './image/girl-with-pearl-earring.jpg',
-  girlPearlMaking: './image/girl-with-pearl-earring-making.jpg',
+  girlPearl: '/image/girl-with-pearl-earring.jpg',
+  girlPearlMaking: '/image/girl-with-pearl-earring-making.jpg',
   
   // Ataturk Project
-  ataturk: './image/kemal-ataturk-portrait.jpg',
-  ataturkEye: './image/kemal-ataturk-portrait-closeup1.jpg',
-  ataturkFace: './image/kemal-ataturk-portrait-closeup2.jpg',
-  ataturkHat: './image/kemal-ataturk-portrait-closeup3.jpg',
+  ataturk: '/image/kemal-ataturk-portrait.jpg',
+  ataturkEye: '/image/kemal-ataturk-portrait-closeup1.jpg',
+  ataturkFace: '/image/kemal-ataturk-portrait-closeup2.jpg',
+  ataturkHat: '/image/kemal-ataturk-portrait-closeup3.jpg',
   
   // Bull Project
-  bull: './image/floor-bull-main.jpg',
-  bullMaking: './image/floor-bull-making1.jpg',
-  bullDetail: './image/floor-bull-making2.jpg',
-  bullWide: './image/floor-bull-side.jpg',
+  bull: '/image/floor-bull-main.jpg',
+  bullMaking: '/image/floor-bull-making1.jpg',
+  bullDetail: '/image/floor-bull-making2.jpg',
+  bullWide: '/image/floor-bull-side.jpg',
   
   // Mona Lisa
-  monaLisa: './image/mona-lisa.jpg',
-  monaLisaMaking: './image/mona-lisa.jpg',
+  monaLisa: '/image/mona-lisa.jpg',
+  monaLisaMaking: '/image/mona-lisa.jpg',
 
   // Misc
-  process: './image/making-of-icon.jpg',
-  hero: './image/mt-fuji.jpg'
+  process: '/image/making-of-icon.jpg',
+  hero: '/image/mt-fuji.jpg'
 };
 
 // Base data structure
@@ -74,7 +74,7 @@ const PORTFOLIO_DATA: Omit<MosaicItem, 'title' | 'description'>[] = [
     id: 'ataturk', 
     category: MosaicCategory.PORTRAIT, 
     imageUrl: IMAGES.ataturk, 
-    gallery: [IMAGES.ataturkFace, IMAGES.ataturkEye, IMAGES.ataturkHat, './image/kemal-ataturk-portrait-closeup4.jpg'],
+    gallery: [IMAGES.ataturkFace, IMAGES.ataturkEye, IMAGES.ataturkHat, '/image/kemal-ataturk-portrait-closeup4.jpg'],
     featured: true 
   },
   { 
@@ -104,10 +104,10 @@ const PORTFOLIO_DATA: Omit<MosaicItem, 'title' | 'description'>[] = [
   { id: 'cross', category: MosaicCategory.RELIGIOUS, imageUrl: IMAGES.jesusCross },
   { id: 'roman', category: MosaicCategory.CLASSICAL, imageUrl: IMAGES.romanBust },
   { id: 'angels', category: MosaicCategory.RELIGIOUS, imageUrl: IMAGES.angels },
-  { id: 'madonna', category: MosaicCategory.RELIGIOUS, imageUrl: './image/the-madonna.jpg' },
-  { id: 'icons', category: MosaicCategory.RELIGIOUS, imageUrl: './image/icons-on-wall.jpg' },
-  { id: 'floor-motiff', category: MosaicCategory.FLOOR, imageUrl: './image/floor-motiff-mosaic.jpg' },
-  { id: 'ataturk-suit', category: MosaicCategory.PORTRAIT, imageUrl: './image/kemal-ataturk-in-suit.jpg' },
+  { id: 'madonna', category: MosaicCategory.RELIGIOUS, imageUrl: '/image/the-madonna.jpg' },
+  { id: 'icons', category: MosaicCategory.RELIGIOUS, imageUrl: '/image/icons-on-wall.jpg' },
+  { id: 'floor-motiff', category: MosaicCategory.FLOOR, imageUrl: '/image/floor-motiff-mosaic.jpg' },
+  { id: 'ataturk-suit', category: MosaicCategory.PORTRAIT, imageUrl: '/image/kemal-ataturk-in-suit.jpg' },
 ];
 
 export const PORTFOLIO_ITEMS_EN: MosaicItem[] = [
