@@ -36,21 +36,21 @@ export const Home: React.FC = () => {
               (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1544163071-118805f42a59?auto=format&fit=crop&q=80&w=2000'; // Fallback
             }}
           />
-          <div className="absolute inset-0 bg-stone-950/60" />
+          <div className="absolute inset-0 bg-stone-950/70" />
         </div>
 
         {/* Content */}
         <div className="relative z-10 text-center max-w-4xl px-4 animate-fade-in-up">
-          <h2 className="text-gold-400 font-bold tracking-[0.2em] uppercase text-sm mb-4">
+          <h2 className="text-gold-400 font-bold tracking-[0.2em] uppercase text-sm mb-4 drop-shadow-lg">
             {t.hero.subtitle}
           </h2>
-          <h1 className="text-5xl md:text-7xl font-serif font-bold text-white mb-8 leading-tight">
+          <h1 className="text-5xl md:text-7xl font-serif font-bold text-white mb-8 leading-tight drop-shadow-2xl">
             {t.hero.title}
           </h1>
-          <p className="text-lg md:text-xl text-stone-200 mb-6 max-w-2xl mx-auto font-light">
+          <p className="text-lg md:text-xl text-stone-200 mb-6 max-w-2xl mx-auto font-light drop-shadow-lg">
             {t.hero.description}
           </p>
-          <p className="text-gold-400 font-semibold text-lg md:text-xl mb-10 max-w-2xl mx-auto tracking-wide">
+          <p className="text-gold-400 font-semibold text-lg md:text-xl mb-10 max-w-2xl mx-auto tracking-wide drop-shadow-lg">
             {t.hero.unlimitedSize}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
