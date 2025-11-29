@@ -6,7 +6,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { useSearchParams } from 'react-router-dom';
 
 export const Contact: React.FC = () => {
-  const { t, portfolioItems } = useLanguage();
+  const { t, portfolioItems, language } = useLanguage();
   const [searchParams] = useSearchParams();
   const [message, setMessage] = useState('');
   const [formData, setFormData] = useState({
@@ -20,14 +20,56 @@ export const Contact: React.FC = () => {
 
   useEffect(() => {
     const styleId = searchParams.get('style');
+    const mosaicType = searchParams.get('type');
+    
+    // Handle specific mosaic inquiry
     if (styleId) {
       const item = portfolioItems.find(p => p.id === styleId);
       if (item) {
-        const prefillMessage = `I am interested in the "${item.title}" mosaic (ID: ${item.id.toUpperCase()}).\n\nPlease provide more information about this style and pricing options.`;
+        const prefillMessage = language === 'bg' 
+          ? `Интересувам се от "${item.title}" мозайка (ID: ${item.id.toUpperCase()}).\n\nМоля, предоставете повече информация за този стил и ценови опции.`
+          : `I am interested in the "${item.title}" mosaic (ID: ${item.id.toUpperCase()}).\n\nPlease provide more information about this style and pricing options.`;
         setMessage(prefillMessage);
       }
     }
-  }, [searchParams, portfolioItems]);
+    
+    // Handle mosaic type selection (Wall/Floor)
+    if (mosaicType) {
+      // Find the matching type in the dropdown options
+      const matchingType = t.contactPage.mosaicTypes.find(type => 
+        type.toLowerCase().includes(mosaicType.toLowerCase())
+      );
+      
+      if (matchingType) {
+        setFormData(prev => ({ ...prev, type: matchingType }));
+        
+        // Auto-fill message based on language and type
+        let prefillMessage = '';
+        if (language === 'bg') {
+          if (mosaicType.toLowerCase().includes('wall')) {
+            prefillMessage = `Бих искал да поръчам стена мозайка.\n\nИмам следните изисквания:\n- Местоположение: [посочете къде ще се монтира]\n- Приблизителна площ: [m²]\n- Стил/дизайн: [опишете предпочитанията си]\n\nМоля, изпратете ми оферта и информация за процеса.`;
+          } else if (mosaicType.toLowerCase().includes('floor')) {
+            prefillMessage = `Бих искал да поръчам подова мозайка.\n\nИмам следните изисквания:\n- Местоположение: [посочете помещението]\n- Приблизителна площ: [m²]\n- Интензивност на натоварване: [лека/средна/висока]\n- Стил/дизайн: [опишете предпочитанията си]\n\nМоля, изпратете ми оферта и информация за издръжливостта и поддръжката.`;
+          } else {
+            prefillMessage = `Бих искал да поръчам мозайка.\n\nМоля, предоставете повече информация за възможностите и цени.`;
+          }
+        } else {
+          if (mosaicType.toLowerCase().includes('wall')) {
+            prefillMessage = `I would like to order a wall mosaic.\n\nMy requirements:\n- Location: [specify installation location]\n- Approximate area: [m²]\n- Style/design: [describe your preferences]\n\nPlease send me a quote and information about the process.`;
+          } else if (mosaicType.toLowerCase().includes('floor')) {
+            prefillMessage = `I would like to order a floor mosaic.\n\nMy requirements:\n- Location: [specify the room/area]\n- Approximate area: [m²]\n- Traffic intensity: [light/medium/heavy]\n- Style/design: [describe your preferences]\n\nPlease send me a quote and information about durability and maintenance.`;
+          } else {
+            prefillMessage = `I would like to order a mosaic.\n\nPlease provide more information about options and pricing.`;
+          }
+        }
+        
+        // Only set message if it's empty (don't override style-specific messages)
+        if (!message) {
+          setMessage(prefillMessage);
+        }
+      }
+    }
+  }, [searchParams, portfolioItems, language, message]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

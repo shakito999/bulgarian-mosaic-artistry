@@ -209,7 +209,7 @@ export const Home: React.FC = () => {
                     </li>
                   ))}
                 </ul>
-                <Link to="/contact">
+                <Link to={`/contact?type=${encodeURIComponent(tier.title)}`}>
                   <Button variant={index === 1 ? 'primary' : 'outline'} className="w-full">
                     {t.pricing.choose} {tier.title}
                   </Button>
