@@ -163,6 +163,7 @@ export const TRANSLATIONS: Record<'en' | 'bg', SiteContent> = {
       description: 'We transform spaces with bespoke mosaic masterpieces. From intricate wall features to durable floor artistry, we bring the "wow" factor to your property.',
       ctaPortfolio: 'View Portfolio',
       ctaQuote: 'Get a Quote',
+      unlimitedSize: 'Unlimited Size • Your Photos • Custom Designs',
     },
     intro: {
       title: 'Custom Mosaics, Effortless Installation',
@@ -171,6 +172,8 @@ export const TRANSLATIONS: Record<'en' | 'bg', SiteContent> = {
       feature1Desc: 'Our larger pieces are delivered in numbered squares, allowing specifically for rapid, clean installation without taking up your space.',
       feature2Title: 'The "Wow" Factor Experience',
       feature2Desc: 'Want to see the magic happen? We offer on-site creation services to turn the installation into a live art performance.',
+      feature3Title: 'Your Vision, No Limits',
+      feature3Desc: 'Work with your photos, designs, or ideas. We create custom mosaics of any size - from small art pieces to large-scale installations.',
     },
     featured: {
       subtitle: 'Portfolio',
@@ -206,10 +209,11 @@ export const TRANSLATIONS: Record<'en' | 'bg', SiteContent> = {
     },
     pricing: {
       title: 'Transparent Pricing',
-      description: 'Premium materials and artisan labor, priced clearly.',
+      description: 'Premium materials and artisan labor, priced clearly. Custom projects of any size - we work with your vision.',
       choose: 'Choose',
       depositTitle: 'Deposit & Payment',
       depositDesc: (deposit) => `We require a ${deposit} deposit to begin the custom order process (Visualization & Sourcing). The remaining balance is due upon completion.`,
+      unlimitedNote: 'No size restrictions - from small art to large installations',
       tiers: [
         {
           title: 'Wall Mosaic',
@@ -291,6 +295,7 @@ export const TRANSLATIONS: Record<'en' | 'bg', SiteContent> = {
         'Wall Mosaic (€2500/m²)',
         'Floor Mosaic (€3500/m²)',
         'On-Site Installation (+€500/m²)',
+        'Custom Project (Client Photos/Design)',
         'Other / Unsure'
       ]
     },
@@ -313,6 +318,7 @@ export const TRANSLATIONS: Record<'en' | 'bg', SiteContent> = {
       description: 'Ние трансформираме пространства с поръчкови мозаечни шедьоври. От сложни стенни пана до издръжливи подови настилки, ние внасяме "wow" ефекта във вашия имот.',
       ctaPortfolio: 'Разгледай Портфолиото',
       ctaQuote: 'Поискай Оферта',
+      unlimitedSize: 'Без Ограничения в Размерите • Вашите Снимки • Персонализирани Дизайни',
     },
     intro: {
       title: 'Поръчкови Мозайки, Лесен Монтаж',
@@ -321,6 +327,8 @@ export const TRANSLATIONS: Record<'en' | 'bg', SiteContent> = {
       feature1Desc: 'Нашите по-големи произведения се доставят в номерирани квадрати, позволяващи бърз и чист монтаж, без да заемаме вашето място.',
       feature2Title: 'Ефектът "Wow"',
       feature2Desc: 'Искате ли да видите магията на живо? Предлагаме услуги за изработка на място, превръщайки монтажа в представление на живо.',
+      feature3Title: 'Вашата Визия, Без Граници',
+      feature3Desc: 'Работим с вашите снимки, дизайни или идеи. Създаваме поръчкови мозайки с всякакъв размер - от малки арт произведения до мащабни инсталации.',
     },
     featured: {
       subtitle: 'Портфолио',
@@ -356,10 +364,11 @@ export const TRANSLATIONS: Record<'en' | 'bg', SiteContent> = {
     },
     pricing: {
       title: 'Прозрачно Ценообразуване',
-      description: 'Премиум материали и занаятчийски труд, с ясни цени.',
+      description: 'Премиум материали и занаятчийски труд, с ясни цени. Персонализирани проекти с всякакъв размер - работим с вашата визия.',
       choose: 'Избери',
       depositTitle: 'Депозит и Плащане',
       depositDesc: (deposit) => `Изискваме ${deposit} депозит за стартиране на процеса (Визуализация и Снабдяване). Остатъкът се дължи при завършване.`,
+      unlimitedNote: 'Без ограничения в размерите - от малко изкуство до големи инсталации',
       tiers: [
         {
           title: 'Стенна Мозайка',
@@ -441,6 +450,7 @@ export const TRANSLATIONS: Record<'en' | 'bg', SiteContent> = {
         'Стенна Мозайка (€2500/м²)',
         'Подова Мозайка (€3500/м²)',
         'Монтаж на Място (+€500/м²)',
+        'Персонализиран Проект (Снимки/Дизайн на Клиент)',
         'Друго / Не съм сигурен'
       ]
     },

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '../components/Button';
-import { Check, Star, X } from 'lucide-react';
+import { Check, Star, X, Infinity } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { IMAGES } from '../translations';
 import { MosaicItem } from '../types';
@@ -47,8 +47,11 @@ export const Home: React.FC = () => {
           <h1 className="text-5xl md:text-7xl font-serif font-bold text-white mb-8 leading-tight">
             {t.hero.title}
           </h1>
-          <p className="text-lg md:text-xl text-stone-200 mb-10 max-w-2xl mx-auto font-light">
+          <p className="text-lg md:text-xl text-stone-200 mb-6 max-w-2xl mx-auto font-light">
             {t.hero.description}
+          </p>
+          <p className="text-gold-400 font-semibold text-lg md:text-xl mb-10 max-w-2xl mx-auto tracking-wide">
+            {t.hero.unlimitedSize}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/portfolio">
@@ -100,6 +103,15 @@ export const Home: React.FC = () => {
                   <div>
                     <h4 className="font-bold text-stone-900">{t.intro.feature2Title}</h4>
                     <p className="text-sm text-stone-600">{t.intro.feature2Desc}</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="bg-gold-100 p-2 rounded-full mr-4">
+                    <Infinity className="w-5 h-5 text-gold-600" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-stone-900">{t.intro.feature3Title}</h4>
+                    <p className="text-sm text-stone-600">{t.intro.feature3Desc}</p>
                   </div>
                 </div>
               </div>
@@ -220,7 +232,8 @@ export const Home: React.FC = () => {
           
           <div className="mt-12 text-center bg-white p-6 border border-stone-200 max-w-3xl mx-auto">
              <h4 className="font-bold text-stone-900 mb-2">{t.pricing.depositTitle}</h4>
-             <p className="text-stone-600 text-sm">{t.pricing.depositDesc('20%')}</p>
+             <p className="text-stone-600 text-sm mb-4">{t.pricing.depositDesc('20%')}</p>
+             <p className="text-gold-600 font-semibold text-sm">{t.pricing.unlimitedNote}</p>
           </div>
         </div>
       </section>

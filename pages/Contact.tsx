@@ -58,6 +58,10 @@ export const Contact: React.FC = () => {
             prefillMessage = `I would like to order a wall mosaic.\n\nMy requirements:\n- Location: [specify installation location]\n- Approximate area: [m²]\n- Style/design: [describe your preferences]\n\nPlease send me a quote and information about the process.`;
           } else if (mosaicType.toLowerCase().includes('floor')) {
             prefillMessage = `I would like to order a floor mosaic.\n\nMy requirements:\n- Location: [specify the room/area]\n- Approximate area: [m²]\n- Traffic intensity: [light/medium/heavy]\n- Style/design: [describe your preferences]\n\nPlease send me a quote and information about durability and maintenance.`;
+          } else if (mosaicType.toLowerCase().includes('custom') || mosaicType.toLowerCase().includes('персонализиран')) {
+            prefillMessage = language === 'bg'
+              ? `Бих искал да поръчам персонализирана мозайка по моя дизайн/снимка.\n\nИмам следните материали:\n- [опишете вашата идея, прикачете снимки или дизайни]\n- Приблизителен размер: [посочете размери]\n- Местоположение: [къде ще се монтира]\n\nМоля, изпратете ми оферта и информация за процеса на работа с клиентски материали.`
+              : `I would like to order a custom mosaic from my photo/design.\n\nI have the following materials:\n- [describe your idea, attach photos or designs]\n- Approximate size: [specify dimensions]\n- Location: [where it will be installed]\n\nPlease send me a quote and information about working with client materials.`;
           } else {
             prefillMessage = `I would like to order a mosaic.\n\nPlease provide more information about options and pricing.`;
           }
