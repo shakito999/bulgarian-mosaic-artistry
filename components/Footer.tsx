@@ -14,7 +14,7 @@ export const Footer: React.FC = () => {
           
           {/* Brand */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-serif text-white font-bold">Mosaic.BG</h3>
+            <h3 className="text-2xl font-serif text-white font-bold">BulgarianMosaic.EU</h3>
             <p className="text-sm leading-relaxed max-w-xs text-stone-400">
               {t.footer.description}
             </p>

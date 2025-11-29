@@ -35,7 +35,7 @@ export const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <Link to="/" className={`font-serif text-2xl font-bold tracking-tighter ${scrolled || !isHome ? 'text-stone-900' : 'text-white'}`}>
-            Mosaic<span className="text-gold-500">.</span>BG
+            Bulgarian<span className="text-gold-500">Mosaic</span>.EU
           </Link>
 
           {/* Desktop Menu */}
