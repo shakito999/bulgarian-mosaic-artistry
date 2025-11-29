@@ -14,13 +14,31 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('en');
+  const [language, setLanguage] = useState<Language>('bg'); // Default to Bulgarian
 
-  // Simple persistence
+  // Language detection and persistence
   useEffect(() => {
+    // First check if user has previously set a language preference
     const savedLang = localStorage.getItem('mosaic-lang') as Language;
     if (savedLang && (savedLang === 'en' || savedLang === 'bg')) {
       setLanguage(savedLang);
+      return;
+    }
+
+    // If no saved preference, detect browser language
+    const browserLang = navigator.language.toLowerCase();
+    
+    // Check for Bulgarian variants first
+    if (browserLang.startsWith('bg') || browserLang.includes('bulgarian')) {
+      setLanguage('bg');
+    } 
+    // Check for English variants
+    else if (browserLang.startsWith('en') || browserLang.includes('english')) {
+      setLanguage('en');
+    }
+    // Default to Bulgarian for all other languages (since this is a Bulgarian business)
+    else {
+      setLanguage('bg');
     }
   }, []);
 
