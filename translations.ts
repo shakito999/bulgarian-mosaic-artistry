@@ -218,7 +218,7 @@ export const TRANSLATIONS: Record<'en' | 'bg', SiteContent> = {
         {
           title: 'Wall Mosaic',
           price: 1250,
-          unit: 'From €1250 /m²',
+          unit: '/m²',
           recommendedFor: 'Backsplashes, Feature Walls, Facades',
           features: [
             'Custom Design & Visualization',
@@ -231,7 +231,7 @@ export const TRANSLATIONS: Record<'en' | 'bg', SiteContent> = {
         {
           title: 'Floor Mosaic',
           price: 1750,
-          unit: 'From €1750 /m²',
+          unit: '/m²',
           recommendedFor: 'Entryways, Bathrooms, Commercial Spaces',
           features: [
             'Durable stone selection',
@@ -244,7 +244,7 @@ export const TRANSLATIONS: Record<'en' | 'bg', SiteContent> = {
         {
           title: 'On-Site Installation',
           price: 250,
-          unit: 'From +€250 /m²',
+          unit: '/m²',
           recommendedFor: 'Large projects, Complex designs',
           features: [
             'Professional installation team',
@@ -373,7 +373,7 @@ export const TRANSLATIONS: Record<'en' | 'bg', SiteContent> = {
         {
           title: 'Стенна Мозайка',
           price: 1250,
-          unit: 'От €1250 /м²',
+          unit: '/м²',
           recommendedFor: 'Гърбове на кухни, Акцентни стени, Фасади',
           features: [
             'Индивидуален дизайн и визуализация',
@@ -386,7 +386,7 @@ export const TRANSLATIONS: Record<'en' | 'bg', SiteContent> = {
         {
           title: 'Подова Мозайка',
           price: 1750,
-          unit: 'От €1750 /м²',
+          unit: '/м²',
           recommendedFor: 'Антрета, Бани, Търговски пространства',
           features: [
             'Избор на издръжлив камък',
@@ -399,7 +399,7 @@ export const TRANSLATIONS: Record<'en' | 'bg', SiteContent> = {
         {
           title: 'Монтаж на Място',
           price: 250,
-          unit: 'От +€250 /м²',
+          unit: '/м²',
           recommendedFor: 'Големи проекти, Сложни дизайни',
           features: [
             'Професионален екип за монтаж',
