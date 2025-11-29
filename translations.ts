@@ -218,7 +218,7 @@ export const TRANSLATIONS: Record<'en' | 'bg', SiteContent> = {
         {
           title: 'Wall Mosaic',
           price: 1250,
-          unit: 'From €/m²',
+          unit: 'From €1250 /m²',
           recommendedFor: 'Backsplashes, Feature Walls, Facades',
           features: [
             'Custom Design & Visualization',
@@ -231,7 +231,7 @@ export const TRANSLATIONS: Record<'en' | 'bg', SiteContent> = {
         {
           title: 'Floor Mosaic',
           price: 1750,
-          unit: 'From €/m²',
+          unit: 'From €1750 /m²',
           recommendedFor: 'Entryways, Bathrooms, Commercial Spaces',
           features: [
             'Durable stone selection',
@@ -373,7 +373,7 @@ export const TRANSLATIONS: Record<'en' | 'bg', SiteContent> = {
         {
           title: 'Стенна Мозайка',
           price: 1250,
-          unit: 'От €/м²',
+          unit: 'От €1250 /м²',
           recommendedFor: 'Гърбове на кухни, Акцентни стени, Фасади',
           features: [
             'Индивидуален дизайн и визуализация',
@@ -386,7 +386,7 @@ export const TRANSLATIONS: Record<'en' | 'bg', SiteContent> = {
         {
           title: 'Подова Мозайка',
           price: 1750,
-          unit: 'От €/м²',
+          unit: 'От €1750 /м²',
           recommendedFor: 'Антрета, Бани, Търговски пространства',
           features: [
             'Избор на издръжлив камък',
