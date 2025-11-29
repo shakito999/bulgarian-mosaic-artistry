@@ -294,7 +294,7 @@ export const TRANSLATIONS: Record<'en' | 'bg', SiteContent> = {
       mosaicTypes: [
         'Wall Mosaic (€1250/m²)',
         'Floor Mosaic (€1750/m²)',
-        'On-Site Installation (+€250/m²)',
+        'On-Site Installation (€250/m²)',
         'Custom Project (Client Photos/Design)',
         'Other / Unsure'
       ]
@@ -449,7 +449,7 @@ export const TRANSLATIONS: Record<'en' | 'bg', SiteContent> = {
       mosaicTypes: [
         'Стенна Мозайка (€1250/м²)',
         'Подова Мозайка (€1750/м²)',
-        'Монтаж на Място (+€250/м²)',
+        'Монтаж на Място (€250/м²)',
         'Персонализиран Проект (Снимки/Дизайн на Клиент)',
         'Друго / Не съм сигурен'
       ]
