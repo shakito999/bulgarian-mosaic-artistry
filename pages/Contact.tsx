@@ -16,6 +16,7 @@ export const Contact: React.FC = () => {
     size: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showAlternative, setShowAlternative] = useState(false);
 
   useEffect(() => {
     const styleId = searchParams.get('style');
@@ -42,15 +43,43 @@ export const Contact: React.FC = () => {
       `Message:\n${message}`
     );
 
-    // Open email client
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+    // Create mailto link
+    const mailtoLink = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+    
+    // Try multiple methods to open email client
+    try {
+      // Method 1: Create and click a temporary link
+      const link = document.createElement('a');
+      link.href = mailtoLink;
+      link.target = '_blank';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
+      // Method 2: Fallback to window.location
+      setTimeout(() => {
+        if (!document.hidden) {
+          window.open(mailtoLink, '_blank');
+        }
+      }, 500);
+    } catch (error) {
+      console.error('Error opening email client:', error);
+      // Final fallback
+      window.location.href = mailtoLink;
+    }
 
     // Reset form after a short delay
     setTimeout(() => {
       setFormData({ name: '', email: '', type: 'Portrait', size: '' });
       setMessage('');
       setIsSubmitting(false);
-    }, 1000);
+      setShowAlternative(true); // Show alternative after 3 seconds
+    }, 2000);
+    
+    // Hide alternative after 10 seconds
+    setTimeout(() => {
+      setShowAlternative(false);
+    }, 12000);
   };
 
   const handleInputChange = (field: string, value: string) => {
@@ -184,6 +213,27 @@ export const Contact: React.FC = () => {
               <Button variant="primary" className="w-full" type="submit" disabled={isSubmitting}>
                 {isSubmitting ? 'Opening Email Client...' : t.contactPage.submit}
               </Button>
+              
+              {/* Alternative contact method */}
+              {showAlternative && (
+                <div className="mt-4 p-4 bg-amber-50 border border-amber-200 rounded-lg">
+                  <p className="text-sm text-amber-800 mb-3">
+                    📧 Email client didn't open? You can also:
+                  </p>
+                  <div className="space-y-2">
+                    <a 
+                      href={`mailto:${CONTACT_EMAIL}`}
+                      className="block text-center bg-amber-600 text-white px-4 py-2 rounded hover:bg-amber-700 transition-colors text-sm"
+                    >
+                      Click here to open email manually
+                    </a>
+                    <p className="text-xs text-amber-700 text-center">
+                      Or call us directly: {CONTACT_PHONE}
+                    </p>
+                  </div>
+                </div>
+              )}
+              
               <p className="text-xs text-stone-500 text-center mt-4">
                 {t.contactPage.privacy}
               </p>
