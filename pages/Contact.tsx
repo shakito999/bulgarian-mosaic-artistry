@@ -9,6 +9,13 @@ export const Contact: React.FC = () => {
   const { t, portfolioItems } = useLanguage();
   const [searchParams] = useSearchParams();
   const [message, setMessage] = useState('');
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    type: 'Portrait',
+    size: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     const styleId = searchParams.get('style');
@@ -20,6 +27,35 @@ export const Contact: React.FC = () => {
       }
     }
   }, [searchParams, portfolioItems]);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    // Create email content
+    const subject = encodeURIComponent(`Mosaic Inquiry - ${formData.name}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\n` +
+      `Email: ${formData.email}\n` +
+      `Mosaic Type: ${formData.type}\n` +
+      `Size: ${formData.size || 'Not specified'}\n\n` +
+      `Message:\n${message}`
+    );
+
+    // Open email client
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+
+    // Reset form after a short delay
+    setTimeout(() => {
+      setFormData({ name: '', email: '', type: 'Portrait', size: '' });
+      setMessage('');
+      setIsSubmitting(false);
+    }, 1000);
+  };
+
+  const handleInputChange = (field: string, value: string) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+  };
 
   return (
     <div className="pt-24 pb-24 min-h-screen bg-stone-50">
@@ -81,22 +117,41 @@ export const Contact: React.FC = () => {
           {/* Form */}
           <div className="bg-white p-10 shadow-lg border border-stone-200">
             <h3 className="text-2xl font-serif text-stone-900 mb-6">{t.contactPage.formTitle}</h3>
-            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-semibold text-stone-700 mb-2">{t.contactPage.nameLabel}</label>
-                  <input type="text" id="name" className="w-full px-4 py-3 border border-stone-300 focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none transition-colors bg-stone-50" />
+                  <input 
+                    type="text" 
+                    id="name" 
+                    value={formData.name}
+                    onChange={(e) => handleInputChange('name', e.target.value)}
+                    required
+                    className="w-full px-4 py-3 border border-stone-300 focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none transition-colors bg-stone-50" 
+                  />
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-sm font-semibold text-stone-700 mb-2">{t.contactPage.emailLabel}</label>
-                  <input type="email" id="email" className="w-full px-4 py-3 border border-stone-300 focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none transition-colors bg-stone-50" />
+                  <input 
+                    type="email" 
+                    id="email" 
+                    value={formData.email}
+                    onChange={(e) => handleInputChange('email', e.target.value)}
+                    required
+                    className="w-full px-4 py-3 border border-stone-300 focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none transition-colors bg-stone-50" 
+                  />
                 </div>
               </div>
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="type" className="block text-sm font-semibold text-stone-700 mb-2">{t.contactPage.typeLabel}</label>
-                  <select id="type" className="w-full px-4 py-3 border border-stone-300 focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none transition-colors bg-stone-50">
+                  <select 
+                    id="type" 
+                    value={formData.type}
+                    onChange={(e) => handleInputChange('type', e.target.value)}
+                    className="w-full px-4 py-3 border border-stone-300 focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none transition-colors bg-stone-50"
+                  >
                     {t.contactPage.mosaicTypes.map((type, i) => (
                       <option key={i}>{type}</option>
                     ))}
@@ -104,7 +159,14 @@ export const Contact: React.FC = () => {
                 </div>
                 <div>
                   <label htmlFor="size" className="block text-sm font-semibold text-stone-700 mb-2">{t.contactPage.sizeLabel}</label>
-                  <input type="number" id="size" className="w-full px-4 py-3 border border-stone-300 focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none transition-colors bg-stone-50" />
+                  <input 
+                    type="number" 
+                    id="size" 
+                    value={formData.size}
+                    onChange={(e) => handleInputChange('size', e.target.value)}
+                    placeholder="Approximate area in m²"
+                    className="w-full px-4 py-3 border border-stone-300 focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none transition-colors bg-stone-50" 
+                  />
                 </div>
               </div>
 
@@ -119,8 +181,8 @@ export const Contact: React.FC = () => {
                 ></textarea>
               </div>
 
-              <Button variant="primary" className="w-full">
-                {t.contactPage.submit}
+              <Button variant="primary" className="w-full" type="submit" disabled={isSubmitting}>
+                {isSubmitting ? 'Opening Email Client...' : t.contactPage.submit}
               </Button>
               <p className="text-xs text-stone-500 text-center mt-4">
                 {t.contactPage.privacy}
