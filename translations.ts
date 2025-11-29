@@ -244,7 +244,7 @@ export const TRANSLATIONS: Record<'en' | 'bg', SiteContent> = {
         {
           title: 'On-Site Installation',
           price: 250,
-          unit: 'From +€/m²',
+          unit: 'From +€250 /m²',
           recommendedFor: 'Large projects, Complex designs',
           features: [
             'Professional installation team',
@@ -399,7 +399,7 @@ export const TRANSLATIONS: Record<'en' | 'bg', SiteContent> = {
         {
           title: 'Монтаж на Място',
           price: 250,
-          unit: 'От +€/м²',
+          unit: 'От +€250 /м²',
           recommendedFor: 'Големи проекти, Сложни дизайни',
           features: [
             'Професионален екип за монтаж',
