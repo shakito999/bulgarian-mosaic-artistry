@@ -48,6 +48,7 @@ export interface SiteContent {
     description: string;
     ctaPortfolio: string;
     ctaQuote: string;
+    unlimitedSize: string;
   };
   intro: {
     title: string;
@@ -56,6 +57,8 @@ export interface SiteContent {
     feature1Desc: string;
     feature2Title: string;
     feature2Desc: string;
+    feature3Title: string;
+    feature3Desc: string;
   };
   featured: {
     subtitle: string;
@@ -75,6 +78,7 @@ export interface SiteContent {
     choose: string;
     depositTitle: string;
     depositDesc: (deposit: string) => string;
+    unlimitedNote: string;
   };
   portfolioPage: {
     title: string;
